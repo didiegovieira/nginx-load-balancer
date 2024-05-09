@@ -1,4 +1,4 @@
-# NGINX com Balanceador de Carga
+# 📦 NGINX com Balanceador de Carga
 <table>
     <tr>
         <td>
@@ -15,7 +15,7 @@
 
 
 
-## Introdução
+## 🚀 Introdução
 
 O NGINX é um servidor web de código aberto que também pode ser utilizado como um proxy reverso, fornecendo recursos avançados de roteamento e balanceamento de carga. Neste README, vamos explorar como configurar o NGINX como um balanceador de carga para distribuir o tráfego entre vários servidores back-end.
 
@@ -23,7 +23,7 @@ O projeto foi configurado da seguinte forma:
 
 <img width="1000" src="https://res.cloudinary.com/dlxsx2mgd/image/upload/v1715272411/hi5i6x5xq3g4yqnqu3z4.png" alt="project architecture">
 
-## Requisitos
+## 📋 Pré-requisitos
 > [!IMPORTANT]
 > Para iniciar este projeto, você precisará ter o Docker e o Docker Compose instalados em sua máquina.
 
@@ -57,7 +57,7 @@ Ao ter inicializado o docker-compose acesse o seguinte link:
 
 Atualize a página para ver o balanceamento em funcionamento e verá o background trocar de cor, pois estará acessando outras rotas
 
-## Configuração Básica do NGINX como Balanceador de Carga
+## 🛠️ Configuração Básica do NGINX como Balanceador de Carga
 ### Configuração do Balanceador de Carga:
 Edite o arquivo de configuração do NGINX, geralmente localizado em `/nginx/load-balancer/nginx.conf`, e adicione a configuração do balanceador de carga dentro do bloco `http`:
 
@@ -83,7 +83,7 @@ http {
 
 Substitua `backend1.example.com`, `backend2.example.com` e `backend3.example.com` pelos endereços dos seus servidores back-end.
 
-## Opções Avançadas de Configuração
+## 📄 Opções Avançadas de Configuração
 
 ### Ponderação de Servidores
 Você pode configurar o NGINX para distribuir a carga de forma ponderada, dando mais capacidade de processamento a determinados servidores. Por exemplo:
@@ -124,5 +124,5 @@ upstream backend {
 ```
 
 
-## Conclusão
+## ✒️ Conclusão
 O NGINX é uma solução poderosa para balanceamento de carga, oferecendo flexibilidade e desempenho para distribuir o tráfego de forma eficiente entre vários servidores back-end. Com a configuração adequada, você pode melhorar a disponibilidade, escalabilidade e confiabilidade de suas aplicações web.
