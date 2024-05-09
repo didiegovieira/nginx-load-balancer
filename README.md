@@ -1,13 +1,11 @@
 # NGINX com Balanceador de Carga
-
-<img width="1000" src="https://miro.medium.com/v2/resize:fit:1358/1*FcigeCUocGksT_eaQ4JH9w.png" alt="nginx + docker">
+<img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" />
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
 
 ## Introdução
 O NGINX é um servidor web de código aberto que também pode ser utilizado como um proxy reverso, fornecendo recursos avançados de roteamento e balanceamento de carga. Neste README, vamos explorar como configurar o NGINX como um balanceador de carga para distribuir o tráfego entre vários servidores back-end.
 
-## Arquitetura do projeto
-
-O projeto atual está configurado da seguinte forma:
+O projeto foi configurado da seguinte forma:
 
 <img width="1000" src="https://res.cloudinary.com/dlxsx2mgd/image/upload/v1715272411/hi5i6x5xq3g4yqnqu3z4.png" alt="project architecture">
 
@@ -37,6 +35,13 @@ Após ter configurado todo o projeto da forma necessária para inicializar
     ```bash
     docker-compose up --build
     ```
+
+### Passo 3: Visualização
+Ao ter inicializado o docker-compose acesse o seguinte link:
+
+    http://localhost/
+
+Atualize a página para ver o balanceamento em funcionamento e verá o background trocar de cor, pois estará acessando outras rotas
 
 ## Configuração Básica do NGINX como Balanceador de Carga
 ### Configuração do Balanceador de Carga:
