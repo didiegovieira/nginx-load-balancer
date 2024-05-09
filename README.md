@@ -55,7 +55,7 @@ After initializing docker-compose, access the following link:
 
     http://localhost/
 
-Refresh the page to see the load balancing in action, and you will see the background change color as you access different routes.
+The page will update itself.
 
 ## 🛠️ Basic NGINX Configuration as a Load Balancer
 ### Load Balancer Configuration:
