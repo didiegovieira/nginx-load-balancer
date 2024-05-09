@@ -1,4 +1,4 @@
-# 📦 NGINX com Balanceador de Carga
+# 📦 NGINX with Load Balancer
 <table>
     <tr>
         <td>
@@ -15,20 +15,20 @@
 
 
 
-## 🚀 Introdução
+## 🚀 Introduction
 
-O NGINX é um servidor web de código aberto que também pode ser utilizado como um proxy reverso, fornecendo recursos avançados de roteamento e balanceamento de carga. Neste README, vamos explorar como configurar o NGINX como um balanceador de carga para distribuir o tráfego entre vários servidores back-end.
+NGINX is an open-source web server that can also be used as a reverse proxy, providing advanced routing and load balancing features. In this README, we will explore how to configure NGINX as a load balancer to distribute traffic among multiple backend servers.
 
-O projeto foi configurado da seguinte forma:
+The project has been configured as follows:
 
 <img width="1000" src="https://res.cloudinary.com/dlxsx2mgd/image/upload/v1715272411/hi5i6x5xq3g4yqnqu3z4.png" alt="project architecture">
 
-## 📋 Pré-requisitos
+## 📋 Prerequesites
 > [!IMPORTANT]
-> Para iniciar este projeto, você precisará ter o Docker e o Docker Compose instalados em sua máquina.
+> To start this project, you will need Docker and Docker Compose installed on your machine.
 
-### Passo 1: Instalação do Docker
-Instale o Docker em seu servidor. Os comandos abaixo são para Ubuntu, em caso de outro Sistema Operacional deve-se pesquisar como instalar o Docker:
+### Step 1: Docker Installation
+Install Docker on your server. The commands below are for Ubuntu; for other Operating Systems, you should research how to install Docker:
 
 - Ubuntu/Debian:
   ```bash
@@ -41,8 +41,8 @@ Instale o Docker em seu servidor. Os comandos abaixo são para Ubuntu, em caso d
   sudo apt install -y docker-compose
   ```
 
-### Passo 2: Inicialização do Projeto
-Após ter configurado todo o projeto da forma necessária para inicializar
+### Step 2: Project Initialization
+After configuring the project as necessary, initialize it:
 
 - Ubuntu/Debian:
 
@@ -50,16 +50,16 @@ Após ter configurado todo o projeto da forma necessária para inicializar
     docker-compose up --build
     ```
 
-### Passo 3: Visualização
-Ao ter inicializado o docker-compose acesse o seguinte link:
+### Step 3: Visualization
+After initializing docker-compose, access the following link:
 
     http://localhost/
 
-Atualize a página para ver o balanceamento em funcionamento e verá o background trocar de cor, pois estará acessando outras rotas
+Refresh the page to see the load balancing in action, and you will see the background change color as you access different routes.
 
-## 🛠️ Configuração Básica do NGINX como Balanceador de Carga
-### Configuração do Balanceador de Carga:
-Edite o arquivo de configuração do NGINX, geralmente localizado em `/nginx/load-balancer/nginx.conf`, e adicione a configuração do balanceador de carga dentro do bloco `http`:
+## 🛠️ Basic NGINX Configuration as a Load Balancer
+### Load Balancer Configuration:
+Edit the NGINX configuration file, usually located at `/nginx/load-balancer/nginx.conf`, and add the load balancer configuration inside the `http` block:
 
 ```nginx
 http {
@@ -81,12 +81,12 @@ http {
 }
 ```
 
-Substitua `backend1.example.com`, `backend2.example.com` e `backend3.example.com` pelos endereços dos seus servidores back-end.
+Replace `backend1.example.com`, `backend2.example.com` and `backend3.example.com` with the addresses of your backend servers.
 
-## 📄 Opções Avançadas de Configuração
+## 📄 Advanced Configuration Options
 
-### Ponderação de Servidores
-Você pode configurar o NGINX para distribuir a carga de forma ponderada, dando mais capacidade de processamento a determinados servidores. Por exemplo:
+### Server Weighting
+You can configure NGINX to distribute the load in a weighted manner, giving more processing capacity to certain servers. For example:
 
 ```nginx
 upstream backend {
@@ -96,10 +96,10 @@ upstream backend {
 }
 ```
 
-Neste exemplo, `backend1.example.com` receberá aproximadamente três vezes mais tráfego do que `backend3.example.com`.
+In this example, `backend1.example.com` will receive approximately three times more traffic than `backend3.example.com`.
 
 ### Health Checks
-O NGINX pode realizar verificações de saúde (health checks) nos servidores back-end e remover automaticamente os servidores que falharem. Por exemplo:
+NGINX can perform health checks on backend servers and automatically remove servers that fail. For example:
 
 ```nginx
 upstream backend {
@@ -111,8 +111,8 @@ upstream backend {
 }
 ```
 
-### Persistência de Sessão
-Para garantir que todas as requisições de um mesmo cliente sejam direcionadas para o mesmo servidor back-end, você pode usar a persistência de sessão. Por exemplo:
+### Session Persistence
+To ensure that all requests from the same client are directed to the same backend server, you can use session persistence. For example:
 
 ```nginx
 upstream backend {
@@ -124,5 +124,5 @@ upstream backend {
 ```
 
 
-## ✒️ Conclusão
-O NGINX é uma solução poderosa para balanceamento de carga, oferecendo flexibilidade e desempenho para distribuir o tráfego de forma eficiente entre vários servidores back-end. Com a configuração adequada, você pode melhorar a disponibilidade, escalabilidade e confiabilidade de suas aplicações web.
+## ✒️ Conclusion
+NGINX is a powerful solution for load balancing, offering flexibility and performance to efficiently distribute traffic among multiple backend servers. With proper configuration, you can improve the availability, scalability, and reliability of your web applications.
