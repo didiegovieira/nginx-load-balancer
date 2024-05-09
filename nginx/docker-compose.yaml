@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./load-balancer/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - rede-compose
+    depends_on:
+      - site1
+      - site2
+      - site3
+
+  site1:
+    image: didiegovieira/study:yellowgreen
+    networks:
+      - rede-compose
+
+  site2:
+    image: didiegovieira/study:gray
+    networks:
+      - rede-compose
+
+  site3:
+    image: didiegovieira/study:violet
+    networks:
+      - rede-compose
+
+networks:
+  rede-compose:
+    driver: bridge
