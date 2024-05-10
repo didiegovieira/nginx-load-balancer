@@ -10,6 +10,9 @@
         <td>
             <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
         </td>
+        <td>
+            <img src="https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white" />
+        </td>
     </tr>
 </table>
 
